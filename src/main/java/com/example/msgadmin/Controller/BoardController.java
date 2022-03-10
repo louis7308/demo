@@ -8,6 +8,6 @@ public class BoardController {
 
     @GetMapping("/board")
     public String Board() {
-        return "hi2";
+        return "webHook Test";
     }
 }
