@@ -9,7 +9,9 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository;
+    private MemberRepository memberRepository = new MemoryMemberRepository();
+//    private final MemberRepository kyungJunRepository = new KyungJunRepository();
+
 
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
@@ -27,6 +29,7 @@ public class MemberService {
 
         memberRepository.save(member);
         return member.getId();
+
     }
 
     private void validateDuplicateMember(Member member) {
